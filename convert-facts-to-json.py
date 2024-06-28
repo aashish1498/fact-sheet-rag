@@ -3,41 +3,35 @@ import json
 import datetime
 import uuid
 
+def get_facts_from_text(file_path):
+        facts = []
+        with open(file_path, 'r', encoding='utf-8') as file:
+            for line in file:
+                line = line.strip()
+                if line:
+                    fact = {
+                        'content': line,
+                        'timestamp': datetime.datetime.now().isoformat(),
+                        'id': str(uuid.uuid4())
+                    }
+                    facts.append(fact)
+        return facts
 
-def text_to_JSON(facts_path):
-    result = {}
 
-    # Iterate over all files in the directory
-    for filename in os.listdir(facts_path):
+def extract_facts_from_directory(facts_folder):
+    fact_list = {}
+    for filename in os.listdir(facts_folder):
         if filename.endswith('.txt'):
-            # Extract fact_type from filename
+            file_path = os.path.join(facts_folder, filename)
+            facts = get_facts_from_text(file_path)
             fact_type = filename.replace('_template', '').replace('.txt', '')
-            file_path = os.path.join(facts_path, filename)
-            
-            facts = []
+            fact_list[fact_type] = facts
 
-            # Read and process the file
-            with open(file_path, 'r', encoding='utf-8') as file:
-                for line in file:
-                    line = line.strip()
-                    if line:  # Ensure the line is not empty
-                        fact = {
-                            'content': line,
-                            'timestamp': datetime.datetime.now().isoformat(),
-                            'id': str(uuid.uuid4())
-                        }
-                        facts.append(fact)
-
-            # Store the list of facts under the fact_type key
-            result[fact_type] = facts
-
-    # Write the result to a JSON file
-    output_path = os.path.join(facts_path, 'facts.json')
+    output_path = os.path.join(facts_folder, 'facts.json')
     with open(output_path, 'w', encoding='utf-8') as output_file:
-        json.dump(result, output_file, indent=4)
-
+        json.dump(fact_list, output_file, indent=4)
     print(f"Output JSON file created at: {output_path}")
 
-# Example usage
+
 facts_folder = 'fact-sheets'
-text_to_JSON(facts_folder)
+extract_facts_from_directory(facts_folder)
