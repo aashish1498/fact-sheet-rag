@@ -1,4 +1,4 @@
-# fact-sheet-rag
+# Fact Sheet RAG
 
 ## Introduction
 
