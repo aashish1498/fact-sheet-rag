@@ -27,11 +27,10 @@ def extract_facts_from_directory(facts_folder):
             fact_type = filename.replace('_template', '').replace('.txt', '')
             fact_list[fact_type] = facts
 
-    output_path = os.path.join(facts_folder, 'facts.json')
-    with open(output_path, 'w', encoding='utf-8') as output_file:
+    output_file ='facts.json'
+    with open(output_file, 'w', encoding='utf-8') as output_file:
         json.dump(fact_list, output_file, indent=4)
-    print(f"Output JSON file created at: {output_path}")
 
 
-facts_folder = 'fact-sheets'
+facts_folder = 'fact-sheets-txt'
 extract_facts_from_directory(facts_folder)

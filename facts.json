@@ -1,0 +1,51 @@
+{
+    "reminders": [
+        {
+            "content": "I have to book a doctors appointment",
+            "timestamp": "2024-06-29T23:56:53.500472",
+            "id": "ba87b3e1-6acd-4c62-98f1-5e2e7eebc7c2"
+        },
+        {
+            "content": "I have a meeting with John Doe in late November",
+            "timestamp": "2024-06-29T23:56:53.500472",
+            "id": "392aa57c-0911-484f-96b8-f4d14b4e4f1e"
+        }
+    ],
+    "storage": [
+        {
+            "content": "The tissues are in the overhead cupboard.",
+            "timestamp": "2024-06-29T23:56:53.502471",
+            "id": "4e1a8361-b674-4592-ba6c-9a053369eb46"
+        },
+        {
+            "content": "The bulbs are in the storage cupboard on the third shelf.",
+            "timestamp": "2024-06-29T23:56:53.502471",
+            "id": "1a97a42f-757d-4f4d-8b78-8385f8146b4d"
+        },
+        {
+            "content": "The Screen protector is in the overhead cupboards",
+            "timestamp": "2024-06-29T23:56:53.502471",
+            "id": "f5c5c7ed-4cf2-4cc4-8797-fa47c6ce4455"
+        },
+        {
+            "content": "The Spare boxes are under the bed.",
+            "timestamp": "2024-06-29T23:56:53.502471",
+            "id": "de5416cd-4cd6-466a-b16c-c682b1c13575"
+        },
+        {
+            "content": "The Spare tubs are in the second kitchen drawer under the sink.",
+            "timestamp": "2024-06-29T23:56:53.502471",
+            "id": "daafa168-6fb8-4025-b273-8d363c46a04c"
+        },
+        {
+            "content": "The lens wipes are with the tissues in the overhead cupboards.",
+            "timestamp": "2024-06-29T23:56:53.502471",
+            "id": "7e805d7c-6b73-41c6-8fc5-647d15b6e33e"
+        },
+        {
+            "content": "The extra toilet rolls are in the far left cupboards in the bathroom.",
+            "timestamp": "2024-06-29T23:56:53.502471",
+            "id": "26ca4601-644b-46f2-acc8-ced59bfa5941"
+        }
+    ]
+}
