@@ -1,7 +1,6 @@
 import os
-import json
 import datetime
-import uuid
+import utilities
 
 def get_facts_from_text(file_path):
         facts = []
@@ -12,7 +11,7 @@ def get_facts_from_text(file_path):
                     fact = {
                         'content': line,
                         'timestamp': datetime.datetime.now().isoformat(),
-                        'id': str(uuid.uuid4())
+                        'id': utilities.generate_id()
                     }
                     facts.append(fact)
         return facts
@@ -26,10 +25,8 @@ def extract_facts_from_directory(facts_folder):
             facts = get_facts_from_text(file_path)
             fact_type = filename.replace('_template', '').replace('.txt', '')
             fact_list[fact_type] = facts
-
-    output_file ='facts.json'
-    with open(output_file, 'w', encoding='utf-8') as output_file:
-        json.dump(fact_list, output_file, indent=4)
+    
+    utilities.save_to_json(fact_list, 'facts.json')
 
 
 facts_folder = 'fact-sheets-txt'
